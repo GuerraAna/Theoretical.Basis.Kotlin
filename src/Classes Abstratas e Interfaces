@@ -1,0 +1,78 @@
+COMO PENSAR EM ORIENTAÇÃO AO OBJETO ANTES DE PROGRAMAR?
+-fazer uma tabela no topo calculadora(objeto) e os valores são as propriedades e métodos;
+. Classe: Conjunto de objetos com características parecidas;
+. Propriedade: características da classe calculadora;
+. Métodos: ações que um objeto pode tomar (somar);
+
+-------------------------------------------------------------------------------------------------------
+
+--->CLASSES ABSTRATAS<---
+. INDICADA POR abstract class;
+. Uma classe abstrata, assim como, os seus métodos é OPEN por padrão. Ou seja, os seus dados
+podem ser herdadose e não precisa indicar a palavra OPEN atrás da class.
+. Métodos: conjunto de ações realizadas pelo objeto;
+. As Classes "normais" que vão herdar as propriedades das classes abstratas terão que implementar TOOODOSSS os
+métodos da super class;
+. As Classes abstratas, que herdam de outras classes abstratas, não precisam herdar TODOOOS os métodos
+da super class abstrada;
+. CONCLUSÃO: A classe abstrata é uma super class capaz de herdar suas propriedades de formas diferenciadas, como
+por exemplo: class abstrata herda da super classe abstrata =  alguns métodos são herdados
+             class "normal" herda da super classe abstrata = TODOS os métodos são herdados
+
+Exemplo:    abstract class Food(open val price: Double){
+
+                abstract fun calculate(fee: Double): Double
+            }
+
+            class Hamburguer(price: Double): Food(price)
+
+. Uma classe abstrata pode herdar propriedades de uma classe "comum";
+
+-------------------------------------------------------------------------------------------------------------------------
+
+---> Interface <---
+
+DECORAR:"É UM CONTRATO DE DECLARAÇÃO DE COMPORTAMENTO DE UM CONJUNTO DE CLASSES".
+
+. São classes com comportamentos semelhantes;
+. A Interface tem haver com um comportamento esperado de uma ou um conjunto de classes;
+. A interface defini o que uma classe deve fazer, ou não;
+. Não possuem um conjunto de métodos (ações em forma de funções), apenas declaram um conjunto de métodos para as classes seguirem;
+. Todos os métodos são Abstratos(classes pode herdar ou ceder) e Públicos(classes herdam);
+. A classe ao implementar-se na Interface promove a implementação de todos os seus métodos;
+. As Interfaces não podem ser iniciadas, ou seja, não podemos criar um objeto de interface;
+. As Interfaces possuem somente  a declaração dos métodos, ou seja, o tipo de retorno, o nome do método,
+seus parâmetros e as exceções lançadas pelo método. A implementação dos métodos será feita pelas
+classes que implementam a interface.
+
+CLASSE X INTERFACE: A classe pode herdar apenas uma classe, mas pode implentar mais de uma Interface;
+
+. Exemplo de Uso de Interface: Suponha que temos um sistema com um módulo de cadastros onde temos
+diversos cadastros ( cadastro de clientes, cadastro de fornecedores, cadastros de produtos,
+cadastro de pedidos, cadastro de pagamentos, etc. ). São muitos cadastros e todos devem permitir
+incluir, alterar, excluir e consultar informações.
+Exemplo de Interface:
+interface A {
+    fun foo() { print("A") }
+    fun bar()
+}
+
+interface B {
+    fun foo() { print("B") }
+    fun bar() { print("bar") }
+}
+
+class C : A {
+    override fun bar() { print("bar") }
+}
+
+class D : A, B {
+    override fun foo() {
+        super<A>.foo()
+        super<B>.foo()
+    }
+
+    override fun bar() {
+        super<B>.bar()
+    }
+}

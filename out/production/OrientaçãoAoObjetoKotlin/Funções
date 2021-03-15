@@ -1,0 +1,58 @@
+COMO PENSAR EM ORIENTÇÃO AO OBJETO ANTES DE PROGRAMAR?
+-fazer uma tabela no topo calculadora(objeto) e os valores são as propriedades e métodos;
+. Classe: Conjunto de objetos com características parecidas;
+. Propriedade: características da classe calculadora;
+. Métodos: ações que um objeto pode tomar (somar);
+
+
+Parte teórica funções:
+. Uma função representa uma rotina dentro de um sistema;
+. Lembre-se de Lógica de programação, o caminho mais rápido para se solucionar um probloema é um algoritmo;
+. A fun main é a função principal dentro do Kotlin, é nela que são realizadas diversas ações;
+. Estrutura de uma função:
+        fun nome (base da condição): Tipo do retorno{
+            val nome = condição
+            return nome
+        }
+. A função ela pode ser encontrada dentro de uma classe, como função mebro, pode ser encontrada dentro da função main, pode ser encontrada fora da classe e da função main;
+. No Kotlin, o que fica entre os parênteses de uma função, representa Pasca Notation, ou seja, os parâmetros:
+                Ex: fun main (arg: Array<Strings>){
+                        bloco de código
+                }
+                arg: primeiro parâmetro
+                Array<String>: tipo do parâmetro e tipo de Array
+
+- Tipos de retornos:
+1) Unit: . Pode ficar oculto dentro da função, caso ela não tenha um retorno.
+        Ex: fun main: Unit {
+        }
+2) Return: . Duas possi´veis formas de declarar uma função que tem um retorno:
+            a) fun soma (a: Int, b: Int): Int{
+                val somatoria = a + b
+                return somatoria
+            }
+            b) fun soma (a: Int, b: Int) = a + b
+
+-Argumento padrão: . A sua ocorrência é devido a existência de uma função com o seu bloco de códigois está omitido;
+                   . Esse tipo de função precisa ser invocada na fun main:
+                   Ex: fun ler (bytes: Array<Byte>, tamanho: Int = bytes.size){
+                                código omitido
+                         }
+                      fun main (){
+                        val arrayDeBytes = ler ()
+                        println(arrayDeBytes, 1 )
+                      }
+- Parâmetros nomeados: . Estrutura: fun Nome (Parâmetro: Tipo){ }
+                       Ex: fun posição (
+                                altura: Float,
+                                tempo: Float
+                                ){
+                                }
+- Invocar função: . Chamar na fun main, ex:
+                    fun main ( ){
+                    posicao(
+                            altura = o.1F,
+                            tempo = 1.5F
+                            )
+                    }
+

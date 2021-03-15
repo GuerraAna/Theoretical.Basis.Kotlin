@@ -1,0 +1,10 @@
+--->POLIMORFISMO RESUMO<---
+
+. Polimorfismo é a capacidade do objeto de ser referenciado de várias formas;
+. O OBJETO NÃO SE TRANSFORMA, TODO OBJETO NASCE DE UM TIPO E MORRE DO MESMO TIPO!!!!!
+. O que muda, no objeto, é a maneira de como nos referimos a ele;
+. Os métodos são os influenciadores para a "mudança" do objeto, dando várias formas de como tratá-lo;
+. Tem como objetivo evitar a carga excessiva de crianção de métodos;
+
+OBS: Polimorfismo é semelhante a herança.
+

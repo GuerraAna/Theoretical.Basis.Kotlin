@@ -1,0 +1,154 @@
+Kotlin é uma linguagem de programação orientada ao objeto e funcional.
+- O . O que é Programação Orientada ao Objeto?
+    R : Pense em um objeto no mundo real, o que o define como este objeto? Os conceitos que o definem é o objeto no mundo virtual, ou seja, as suas características principais.
+. O objetivo da programação orientada ao objeto é fornecer a manipulação dos valores reais no mundo virtual.
+. Orientação volta ao objeto é um paradigma na programação;
+Exemplo básico sobre a lógica da Orientação ao objeto... Ex: Calculadora = objeto
+                                                             metodos = funções
+                                                             propriedades = cor, marca
+
+COMO PENSAR EM ORIENTÇÃO AO OBJETO ANTES DE PROGRAMAR?
+-fazer uma tabela no topo calculadora(objeto) e os valores são as propriedades e métodos;
+. Classe: Conjunto de objetos com características parecidas; -> Pode pensar como uma forma de bolo
+. Propriedade: características da classe calculadora;
+. Métodos: ações que um objeto pode tomar (somar);
+. Objeto é uma cópia da classe (ou seja, o objeto possui as características da classe)
+. Atributos  = propriedades (características)
+Ex:
+PESSOA CLASSE
+nome cpf corDePele altura
+andar() correr() comer() dormir()
+..................................
+PESSOA OBJETO
+Hercules 1234243 branco 1.32
+andar() correr() comer() dormir()
+..................................
+CONTA BANCÁRIA CLASSE
+titular numeroIdent saldo
+depositar() sacar() verSaldo()
+..................................
+CONTA BANCÁRIO OBJETO
+Joao 123123 500
+depositar() sacar() verSaldo()
+..................................
+
+1) Classe:
+. É um bloco de construção de Software fundamental, encontrado na grande maioria das linguagens orientadas a objetos
+. # Classes são usadas para criar novos tipos de dados
+. Estrutura principal de uma class: init é uma função de inicialização na class
+        class Nome (construtor primário composto por propriedades){
+            init{
+            require( )
+            println("")
+            }
+        }
+. Caso a class não possua corpo, podemos representá-la da seguinte maneira: class Nome
+. init representa um bloco de inicialização e pode obter mais de um bloco de código que acessa os parâmetros do construtor primário da classe.
+. A classe não precisa necessariamente, possuir um construtor primário, ela pode declar suas propriedades no construtor secundário ou no seu corpo.
+           Usa-se a palavra this para acessar a formula nos dados
+                  Ex: class Medicamento{
+                    val formula: String
+
+                    constructor(formula: String, posologia: String) {
+                        this.formula = formula
+                    }
+OBS: COLOCAR UMA PALAVRA PARA REFERENCIAR OS PARÂMETROS DA CLASS FAZ UM GET, por exemplo, na fun main vc pode invocala. Caso contrário, não terá acesso
+- var dá acesso a leitura e reescrita
+-val da acesso apenas a leitura
+-Getter e setter estão "por baixo dos panos"
+
+a)Construtores: .São funções que formam a class, utilizados para iniciar e criar objetos
+                .No Kotlin os construtores são dividios entre Primários e Secundários
+  -Construtor primário:
+   . Faz parte do cabeçalho class e contem parâmetros;
+   . Parâmetros são as características do objeto;
+   . Os parâmetros são acompanhados das palavras reservadas val ou var;
+   . Estrutura básica do construtor primário: class Nome (val propriedade: Tipo){ }
+   . Não pode obter nenhum código em sua estrutura;
+  -Contrutor secundário:
+   . Pode existir mais de uma vez na class;
+   . Sempre devem declarar a palavra reservada constructor, mesmo quando existir o construtor primário;
+   . O construtor secundário delega o Construtor primário pela palavra this;
+   . Não é necessário declarar seus parâmetros com as palavras reservadas val ou var;
+
+b)Instância da Class: . Intânciamento serve para invocar um construtor;
+                      . Aparece antes do construtor secundário;
+                      . Toda a clase com construtor primário ou secundário deve ser invocada;
+
+c) Funções Membro: . São funções declaradas dentro de classes;
+                   . Possuem a mesma regra das funções, com exceção da palvra this para referenciar a sua instância;
+                   . Não use função membro quando houver construtor secundário;
+d) Nível de acesso: . private class (classe privada: acesso bloqueado) -> Ex: private class Medicamento
+                    . protected class (subclasse privada: acesso bloqueado) -> protected class Tributacao
+OBS: Subclasse está dentro da classe, ou seja aninhada!
+
+..................................................................................................................................................................................
+
+Class é a planta da casa que organiza os objetos;
+Data Class são dados que quando inseridos na memória jamais poderão ser alterados, apenas copiados;
+A instância da class são as características do objeto;
+val casa é o objeto;
+casa ( ) esta puxando a class Casa para a função principal;
+var cor é um membro da casa que vai receber uma instância (valor) da função main;
+Ao usar o PONTO (na função main) estamos acessando um tributo da casa;
+casa.cor = "Amarela" está atribuindo um valor para o tributo cor da casa;
+casa1 e casa são os objetos da classe casa;
+
+//O nome da classe sempre vem com a primeira letra maiúscula. Ocorreu um erro pois em outro arquivo uma class já usa este nome.
+class casa () {
+    Propriedades.
+    var cor: String = " "
+    var janela: Int = 10
+    var porta: Int = 5
+    var casa: Int = 15
+
+    .Métodos (instanciar): Ações. Usa-se a regra camelCase
+    .This é usado para acessar um método ou atributo que está dentro da mesma classe;
+    .Para abrirCasa temos que abrir a porta e a janela junto, então, usa-se o "this".
+
+    fun abrirJanela(qtdJanelas: Int) {
+        println("Abrir janela total: $qtdJanelas")
+    }
+
+
+    . qtd serve para definir
+
+    fun abrirPorta(qtdPortas: Int) {
+        println("Abrir Porta")
+    }
+
+    . Para abrir a casa eu abro a janela e a porta ao mesmo tempo. Use This;
+
+    fun abrirCasa() {
+        this.abrirJanela(10)
+        this.abrirPorta(5)
+        println("Abrir casa")
+    }
+}
+
+fun main(args: Array<String>) {
+
+    //Objeto 1.
+    val casa = casa()
+    casa.cor = "Amarela"
+    casa.abrirJanela(2)
+    casa.abrirPorta(5)
+    casa.abrirCasa()
+    println(casa.cor)
+    println(casa.janela)
+    println(casa.porta)
+    println(casa.casa)
+
+    //Objeto 2.
+    val casa1 = casa()
+    casa1.cor = "vermelha"
+    casa1.abrirJanela(3)
+    casa1.abrirPorta(5)
+    casa1.abrirCasa()
+    println(casa1.cor)
+    println(casa1.janela)
+    println(casa1.porta)
+    println(casa1.casa)
+}
+
+

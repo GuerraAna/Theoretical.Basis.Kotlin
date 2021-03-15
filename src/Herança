@@ -1,0 +1,128 @@
+COMO PENSAR EM ORIENTAÇÃO AO OBJETO ANTES DE PROGRAMAR?
+-fazer uma tabela no topo calculadora(objeto) e os valores são as propriedades e métodos;
+. Classe: Conjunto de objetos com características parecidas;
+. Propriedade: características da classe calculadora;
+. Métodos: ações que um objeto pode tomar (somar);
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+Conceito de classe abstrata, polimorfismo, interface e herança:
+
+ ----> RESUMO HERANÇA <----
+
+- Conceito de Herança simplificado (serve para todas as linguagens):
+. É um dos principais recursos do estudo da orientação ao objeto;
+. O objetivo da Herança é estender ou modificar o comportamento de um código existente;
+. A herança são características passadas de uma super classe para uma sub classe (ou classe derivada);
+. Classe existente é a que irá ceder as características e a classe criada irá herdar as características da super classe;
+. Um conjunto de classes podem partilhar as mesmas características e essas características podem formar uma super classe;
+Exemplo de pensamento: . Hamburguer e pizza são sub classes que pertencem a super class Food.
+                       . Por que? porque a pizza e o hamburguer possuem características em comums, tem um preço,
+                        tem calorias e tem nome. Ou seja, pertencem a mesma Super Class.
+
+- Herança em Kotlin:
+. A classe (local que armazena as propriedades do objeto - "forma de bolo") possui um supertipo chamado ANY que pode estar amostra ou oculto;
+. Any() é a simplificação da palvra Anyone().
+. A classe :Any() possui as funções equals(), hashCode() e toString()
+                            Exemplo: 1) class Food (val price: Double)
+                                     2) class Food (val price: Double): Any( )
+                                     Class 1 é igual a class 2, o Any () não as diferencia
+
+. A função "Any()" significa que não há supertipo declarado nesta class, o que seria a mesma coisa que não indicar Any();
+. Uma class herda as propriedades de um supertipo e esta herança é declarada pela troca do Any() pelo nome da super class;
+. Para uma super class ser identificada, é necessário que esta possua a palavra open no começo de sua nomeação;
+                            Exemplo: open class Food(val price: Double)
+                                          class Hamburguer(price: Double) : Food()
+
+OBS: Kotlin não suporta herança MULTIPLA, apenas uma class pode ser incluida no supertipo de outra class;
+. A class que herdar as características de uma super class ela irá perder a sua palavra reservada (val/var);
+. A propriedade recebida na sub class pode ser usada por uma instância (função) dessa class;
+                            Exemplo: val hamburguer: Hamburguer = Hamburguer(2,98)
+                                     println("total: ${hamburguer.price}")
+. Duas medidas de segurança podem ser adotadas: 1) private: A super class não poderá ser acessada e nenhuma outra class poderá herdar suas propriedades;
+                                                2) protected: Uma subclass, dentro a superclass não poderá ser acessada, mas a super class será acessada;
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+---->CONSTRUTORES SECUNDÁRIOS<----
+
+. A existencia de um construtor secundário numa super class é devido a falta de um construtor primário na mesma;
+. Quando a Super class não possui as suas propriedades armazenadas no construtor primário, é necessário que esta declare as
+propriedades no construtor secundário e inicialize-os nas subclasses usando a palavra THIS;
+        Exemplo: open class Food{
+                    open val price:Double
+
+                    constructor(price: Double){
+                        this.price = price
+                    }
+                }
+                class Hamburguer: Food{
+                    constructor(price: Double): super(price)
+                }
+OBS: Super class sem construtor primário vai chamar uma class sem o construtor primário, também, para dar as ssuas características;
+        Exemplo: open class Food {
+                        open var price: Double = 0.0
+                        open var name: String = ""
+
+                        constructor(price: Double){
+                        this.price = price
+                        }
+                        constructor(name: String){
+                        this.name = name
+                        }
+                        constructor(price: Double, name: String){
+                        this.name = name
+                        this.price = price
+                        }
+        }
+                class Hamburguer: Food{
+                        constructor(price: Double): super(price)
+                        constructor(name: String): super(name)
+                        constructor(name: String, price: Double): super(name, price)
+                }
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--->Propriedades<---
+
+OBS: sobrescrever é mudar a propriedade.
+. OVERRIDE: é uma palavra importante para que sobrescrever uma propriedade da super class na subclass;
+. Lembre-se que não dá para alterar o valor de uma super class, apenas herdá-lo e mudá-lo;
+. Lembre-se que a palavra OPEN define a super class como sendo ela mesma!
+. Caso a class não tenha a palavra OPEN como inicial, ela não poderá ter herdeiros e nem serem sobrescritas;
+
+Exemplo: open class Food(open val price: Double)
+              class Hamburguer (override val price: Double): Food(price)
+
+. OVERRIDE pode estar dentro dos parênteses do constructor(OVERRIDE...) e pode estar fora, como no exemplo abaixo:
+
+Exemplo: open class Food{
+            val price: Double,
+            val name: String
+
+            constructor(price: Double){
+                this.price = price
+            }
+            constructor(name: String){
+                this.name = name
+            }
+}
+        open Topping(price: Double, private val food: Food): Food(price){
+                    override price: Double = price
+                    get() = field + food.price
+        }
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+--->IMPLEMENTAÇÃO DA SUPERCLASSE<---
+. A palavra OPEN, pode ser usada para acessar funções da super class;
+A classe hamburguer vai sobrescrever o seu price pela herança da super class Food;
+Exemplo:    open class Food(open val price: Double) {
+
+                    open fun calculate(fee: Double): Double {
+                            return price * fee
+                    }
+            }
+
+            class Hamburger(override val price: Double) : Food(price) {
+
+                    fun calculate(fee: Double, discount: Double): Double {
+                            return super.calculate(fee) - discount
+                    }
+            }

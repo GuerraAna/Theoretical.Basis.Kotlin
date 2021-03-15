@@ -1,0 +1,23 @@
+COMO PENSAR EM ORIENTÇÃO AO OBJETO ANTES DE PROGRAMAR?
+-fazer uma tabela no topo calculadora(objeto) e os valores são as propriedades e métodos;
+. Classe: Conjunto de objetos com características parecidas;
+. Propriedade: características da classe calculadora;
+. Métodos: ações que um objeto pode tomar (somar);
+
+Data Class:
+. São estruturas semelhantes as classes que já conhecemos;
+        data class Nome (val variavel: Tipo) { Bloco de código}
+. As Data class são totalmente dependentes de seus dados;
+. O que é uma Data Class?
+   R: É um conjunto de dados, que quando armazenados em uma memória, jamais poderão ser modificados, apenas copiados.
+. A Data Class é obrigada a possuir uma propriedade, ou seja, um cosntrutor primário e pelo menos um parâmetro;
+. A Data Class pode ser copiada e modificada, da seguinte maneira:
+
+       data class User (val name: String, val age:Int){
+        }
+
+       fun copy(name: String = this.name, age: Int = this.age) = User (name, age){
+       val jane = User("Jane", 35)
+       val (name, age) = jane
+       println("$name tem $age anos.")
+       }
