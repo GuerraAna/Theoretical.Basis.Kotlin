@@ -6,8 +6,13 @@ Iniciei no mundo da programação em Janeiro de 2020, desde lá eu enfrentei div
 
 Para solucionar esta dificuldade, dediquei-me aos estudos por uma semana e armazenei todo o conhecimento obtido ao decorrer dos dias. Este repositório é o resultado desta vitória, ele diz respeito à teoria da Programação Orientada a Objetos  e da Lógica de Programação voltada para à linguagem Kotlin.
 
-## Recado:
+## Recado 1:
 Para todos aqueles que tiverem um, ou mais, Feed back a respeito de algum detalhe deste repositório, se sinta no direito de compartilhar a sua informação conosco. Eu tenho certeza que, todos nós iniciantes agradeceremos por tudo! 
+
+## Recado 2:
+Este recado é para todos os estudantes que estão enfrentando dificuldade nos estudos e/ou na vida. Nunca deixem de acreditar nos seus sonhos e continuem lutando para fazer do amanhã um dia melhor do que o hoje. Enfrentem os desafios com garra e perseverança, que eu tenho certeza que chegarão onde desejarem.
+
+Caso precise de ajuda, pode contar comigo! #comunidadeDev
 
 ## Fontes:
 https://code.tutsplus.com/pt/tutorials/kotlin-from-scratch-classes-and-objects--cms-29590
