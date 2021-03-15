@@ -2,7 +2,7 @@
 ## Introdução:
 Olá, tudo bem? 
 
-Iniciei no mundo da programação em Janeiro de 2020, desde lá eu enfrentei diversas barreiras teóricas e práticas que me deixaram cada vez mais fascinada pela área de tecnologia. 
+Iniciei no mundo da programação em Janeiro de 2021, desde lá eu enfrentei diversas barreiras teóricas e práticas que me deixaram cada vez mais fascinada pela área de tecnologia. 
 
 Para solucionar esta dificuldade, dediquei-me aos estudos por uma semana e armazenei todo o conhecimento obtido ao decorrer dos dias. Este repositório é o resultado desta vitória, ele diz respeito à teoria da Programação Orientada a Objetos  e da Lógica de Programação voltada para à linguagem Kotlin.
 
