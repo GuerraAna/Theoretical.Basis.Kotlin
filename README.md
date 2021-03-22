@@ -15,11 +15,11 @@ Este recado é para todos os estudantes que estão enfrentando dificuldade nos e
 Caso precise de ajuda, pode contar comigo! #comunidadeDev
 
 ## Fontes:
-https://code.tutsplus.com/pt/tutorials/kotlin-from-scratch-classes-and-objects--cms-29590
-https://www.devmedia.com.br/kotlin/
-https://kotlinlang.org/docs/home.html
-http://tisemcomplicacaobahia.blogspot.com/2021/02/introducao-ao-kotlin-atraves-do.html
-https://pt.stackoverflow.com/
-https://sites.google.com/site/anhangueraniteroipoo/aulas/aula-3---polimorfismo-e-classes-abstratas
+1. https://code.tutsplus.com/pt/tutorials/kotlin-from-scratch-classes-and-objects--cms-29590
+2. https://www.devmedia.com.br/kotlin/
+3. https://kotlinlang.org/docs/home.html
+4. http://tisemcomplicacaobahia.blogspot.com/2021/02/introducao-ao-kotlin-atraves-do.html
+5. https://pt.stackoverflow.com/
+6. https://sites.google.com/site/anhangueraniteroipoo/aulas/aula-3---polimorfismo-e-classes-abstratas
 
 
