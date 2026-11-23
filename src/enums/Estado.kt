@@ -1,3 +1,5 @@
+package enums
+
 //COMO PENSAR EM ORIENTAÇÃO AO OBJETO ANTES DE PROGRAMAR?
 //-fazer uma tabela no topo calculadora(objeto) e os valores são as propriedades e métodos;
 //. Classe: Conjunto de objetos com características parecidas;
@@ -47,7 +49,7 @@ fun main( ) {
     println(Estado.SP.ordinal) //Representação numérica do Enum: O print resulta em 1;
     println(Estado.valueOf(value = "SP")) //valueOf devolve a lista de Enum que existe;
     println()
-    Estado.values().forEach(::println) //forEach executa cada função em Array;
+    Estado.entries.forEach(::println) //entries lista todas as constantes do Enum;
     println(Estado.SP.descricao) //Recurso inicializador;
 
     when (MeioDePagamento.CARTAO_CREDITO) {

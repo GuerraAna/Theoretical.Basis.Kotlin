@@ -1,3 +1,5 @@
+package medicamento
+
 //Exemplo de class:
 class Medicamento (val formula: String, var posologia: String, val constraindicacao: String) {
     constructor(formula: String, posologia: String) : this(
@@ -21,4 +23,9 @@ fun main() {
         //Instanciamentos da class a partir dos construtores
         val medicamento1 = Medicamento("Dorflex", "...")
         val medicamento2 = Medicamento("Dramin", "...", "Minha contraindicação")
+
+        println(medicamento1.formula)
+        println(medicamento1.constraindicacao)
+        println(medicamento1.contem("dor"))
+        println(medicamento2.constraindicacao)
     }

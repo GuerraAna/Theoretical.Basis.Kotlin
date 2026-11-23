@@ -1,3 +1,5 @@
+package arrays
+
 //Arrays armazena vários itens dentro de uma variável. Podendo ser matriz ou vetor;
 //Ao criar um Array ele automaticamente cria índices, sempre começando do índice zero (0);
 //É possível alterar valores do Array;

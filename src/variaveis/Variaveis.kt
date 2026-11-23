@@ -1,3 +1,5 @@
+package variaveis
+
 //Introdução à variáveis;
 //Tipos de dados: Int, Long, Float, Double, Array, Boolean, Char, Byte, Short, Null!;
 //Conversão de dados: toByte | toShort | toInit | toLong | toFloat | toDouble | toChar;
@@ -84,6 +86,3 @@ fun multiplicacao1(x: Int, y: Int) = x.times(y)
 fun divisao1(x: Int, y:Int) = x.div(y)
 fun resto1(x: Int, y:Int) = x % y
 fun porcentagem1(x: Int, y:Int) = x.times(y)/100
-
-
-

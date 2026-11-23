@@ -14,6 +14,36 @@ Este recado é para todos os estudantes que estão enfrentando dificuldade nos e
 
 Caso precise de ajuda, pode contar comigo! #comunidadeDev
 
+## Conteúdo
+
+Cada pasta em `src/` é um tema, com a teoria em comentários e exemplos executáveis:
+
+| Pacote | Tema |
+|---|---|
+| `src/variaveis` | Variáveis, tipos de dados e operadores |
+| `src/arrays` | Arrays e listas |
+| `src/funcoes` | Funções e estruturas de controle |
+| `src/classes` | Classes, construtores e instâncias |
+| `src/dataclasses` | Data class |
+| `src/heranca` | Herança, `open`, `override` e construtores secundários |
+| `src/polimorfismo` | Polimorfismo |
+| `src/abstratas` | Classes abstratas e interfaces |
+| `src/enums` | Enum class |
+| `src/medicamento` | Exemplo completo: construtores, `init` e `require` |
+
+## Como rodar
+
+Pré-requisitos: JDK + Kotlin (`brew install kotlin`).
+
+```bash
+./run.sh <pacote.ArquivoKt>
+
+# Exemplos:
+./run.sh variaveis.VariaveisKt
+./run.sh classes.ClassesKt
+./run.sh heranca.HerancaKt
+```
+
 ## Fontes:
 1. https://code.tutsplus.com/pt/tutorials/kotlin-from-scratch-classes-and-objects--cms-29590
 2. https://www.devmedia.com.br/kotlin/
